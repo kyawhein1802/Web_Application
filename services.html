@@ -1,0 +1,93 @@
+{% extends "base.html" %} {% block title%} Service Page {%endblock%} {% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Service Page| Auto Mobile Service</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
+        <link rel="stylesheet" href="../static/css/test.css" />
+    </head>
+    <body>
+        <!-- END nav -->
+        <div class="container-fluid text-center" style="background-image: url(../static/images/a.jpg); width: 100%; height: 100%;">
+            <div class="row">
+                <div class="col-md-12" style="padding-top: 90px; padding-bottom: 90px;">
+                    <h1>Services</h1>
+                    <p style="color: blue; font-size: 17px;">Home/<i>Services</i></p>
+                </div>
+            </div>
+
+            {% with messages= get_flashed_messages() %} {% if messages %} {% for msg in messages %}
+            <span style="color: red;"> {{msg}} </span>
+            {% endfor %} {% endif %} {% endwith %}
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="testimonial-slider" class="owl-carousel">
+                        {% for s in product %}
+                        <div class="service-box">
+                            <div class="service-box-image">
+                                <figure>
+                                    <img src="{{s.image}}" />
+                                </figure>
+                            </div>
+                            <div class="service-box-body">
+                                <!--Heading-->
+                                <div class="service-box-heading">
+                                    {{s.sname}}
+                                </div>
+                                <!--Text-->
+                                <div class="service-box-text">
+                                    <p class="description">{{s.price}}</p>
+                                </div>
+                                <!--Data-->
+                                {% if session['Uemail'] %}
+                                <button type="button" class="actionbtn"><a href="/appointment">appointment</a></button>
+                                {%else%}
+                                <div class="service-box-data">
+                                    <button onclick="document.getElementById('id01').style.display='block'" style="width: auto;">Appointment</button>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- alert form  -->
+        <div class="container">
+            <div id="id01" class="alertform">
+                <form class="alertform-content" action="" method="post">
+                    <div class="container">
+                        <p>if you want to appointment, you need to login with register account</p>
+
+                        <p>you need to register when you haven't regsiter account</p>
+                    </div>
+
+                    <div class="container" style="background-color: gray;">
+                        <div class="row">
+                            <dir class="col-md-6">
+                                <button type="button" class="actionbtn"><a href="/login">login</a></button>
+                            </dir>
+                            <dir class="col-md-6">
+                                <button type="button" class="actionbtn"><a href="/register">Register</a></button>
+                            </dir>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Start of footer -->
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+        <script src="../static/js/test.js"></script>
+    </body>
+</html>
+{% endblock %}

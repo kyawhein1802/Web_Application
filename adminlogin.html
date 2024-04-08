@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="../static/css/test.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+</head>
+<body>
+	{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<img src="../static/images/auto-service.jpg" style="width: 20%;margin: 10px auto 20px; display: block;">
+		</div>
+		<div class="col-md-4 justify-content-center">
+          <p style="font-size: 20px;color: red;font-family:Impact;font-weight: bold;"><marquee>Master Group Auto Mobile Services</marquee></p>
+		</div>
+		<div class="col-md-4 justify-content-center" style="padding-top: 10px;"><p class=" fa fa-calendar"><i style="padding-left: 20px;">Mon-fri:9AM-18PM</i></p></div>
+	</div>
+  <div class="row ">
+    <div class="col-md-12" style="background-image: url(../static/images/login.jpg);">
+        <form action='/adminlogin' method='post'>
+
+          <h1 style="text-align: center;padding-top: 10px;font-weight: bolder;">Welcome Admin Login Page</h1>
+          
+          <label class="label control-label">Email:</label>
+          <input type="Email" name="email"class="form-control" name="Email" placeholder="Enter Email Address:">
+
+          <label class="label control-label">Password</label>
+          <input type="password" name="pwd" class="form-control" name="Password" placeholder="Password">
+          
+          <input type="submit" value="Login" class="btn btn-info text-center">
+
+        </form>
+    </div>
+  </div>
+    <div class="row firstrow text-center">
+      <div class="col-md-2">
+        <img src="../static/images/liquimoly.png" style="height: 60px;padding-top: 10px;">
+      </div>
+      <div class="col-md-2">
+        <img src="../static/images/asa.png" ></div>
+        <div class="col-md-2"><img src="../static/images/mobile1.jpg" style="height: 60px;padding-top: 10px;"></div>
+        <div class="col-md-2"><img src="../static/images/4.png" ></div>
+        <div class="col-md-2"><img src="../static/images/2.png" ></div>
+        <div class="col-md-2"><img src="../static/images/3.png" ></div>
+
+    </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+{% endblock %}
+</body>
+</html>
+
+

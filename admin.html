@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/test.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container" style="background-color:transparent;">
+	<div class="row" style="border: 2px solid red;text-align: justify;">
+		<div class="col-md-7">
+		<img src="../static/images/auto-service.jpg" style="width: 20%;margin: 10px auto 20px; display: block;">
+		<div class="list-group advnavbar text-center" >
+		    <a href="/admin" class="list-group-item active ">Admin Service</a>
+		    <a href="/insert" class="list-group-item ">Insert Service</a>
+		    <a href="/view" class="list-group-item">View Service</a>
+        <a href="/admin_appointmentview" class="list-group-item">Appointment View</a>
+        <a href="/contactinfo" class="list-group-item">Contact View</a>
+          <a href="/view_user" class="list-group-item">User Accounts</a>
+              {% if session['adminEmail'] %}
+                <a href="/adminlogout" class="list-group-item">Logout</a>
+              {% endif %}
+            <li class="nav-item nav-link">{{session['adminEmail']}}</li>
+		       {% with messages= get_flashed_messages() %}
+
+                {% if messages %}
+                    {% for msg in messages %}
+                    <span style='color:red'>  {{msg}} </span>
+                    {% endfor %}
+
+                {% endif %}
+
+
+              {% endwith %}
+		  </div>
+		</div>
+		<div class="col-md-1"></div>
+		<div class="col-md-4 " >
+			<img src="../static/images/person_1.jpg" style="width: 100%; border-radius: 100px;">
+			<div class="advinfo">
+			<p class=" fa fa-briefcase">:::Kyaw Hein</p><br>
+			<p class=" fa fa-home">:::Yangon, Myanmar</p><br>
+			<p class="fa fa-envelope-open ">:::kyawhein@gmail.com</p><br>
+			<p class=" fa fa-phone">:-:0976745424</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- script -->
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../static/js/popper.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/main.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

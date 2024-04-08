@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+        <link rel="stylesheet" href="../static/css/animate.css" />
+        <link rel="stylesheet" href="../static/css/style.css" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-md-9 d-flex align-items-center">
+                        <div class="row">
+                            <div class="col">
+                                <div class="top-wrap d-flex">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-phone"></span></div>
+                                    <div class="text"><span>Call us</span><span>(+01) 123 456 7890</span></div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="top-wrap d-flex">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-calendar"></span></div>
+                                    <div class="text" onclick=""><span>Date</span><span>Mon-fri:9AM-18PM</span></div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="top-wrap d-flex">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-location-arrow"></span></div>
+                                    <div class="text" onclick=""><span>Address</span><span>Nay Pyi Taw, Myoma Market</span></div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-flex justify-content-end align-items-center">
+                                <div class="social-media">
+                                    <p class="d-flex">
+                                        <a href="#" class="d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-facebook"><i class="sr-only">Facebook</i></span>
+                                        </a>
+                                        <a href="#" class="d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-twitter"><i class="sr-only">Twitter</i></span>
+                                        </a>
+                                        <a href="#" class="d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-instagram"><i class="sr-only">Instagram</i></span>
+                                        </a>
+                                        <a href="#" class="d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                    <div class="col-md-3">
+                        <form action="/search" class="searchform order-lg-last">
+                            <div class="form-group d-flex">
+                                <input type="text" name="keyword" class="form-control pl-3" placeholder="Search" />
+                                <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end of main row -->
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3" style="margin-top: 20px;">
+                        <a class="navbar-brand" href="/">MasterGroup<span class="fa fa-star-o" data-rating="1"></span></a>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span> Menu</button>
+                        <div class="collapse navbar-collapse" id="ftco-nav">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+                                <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                                <li class="nav-item"><a href="/service" class="nav-link">Services</a></li>
+                                <li class="nav-item"><a href="/project" class="nav-link">Project</a></li>
+                                <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
+                                <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                                <li class="nav-item">
+                                    {% if session['Uemail'] %}
+                                    <a href="/logout" class="nav-link">logout</a>
+                                    {% endif %}
+                                </li>
+                                <li class="nav-item nav-link"><a href="/userinfo">{{session['Uemail']}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            {% block content %} {% endblock %}
+        </div>
+        <!-- END nav -->
+        <!-- Start of footer -->
+        <footer class="footer">
+            <div class="container-fluid text-center">
+                <div class="row firstrow">
+                    <div class="col-md-2">
+                        <img src="../static/images/liquimoly.png" style="height: 60px; padding-top: 10px;" />
+                    </div>
+
+                    <div class="col-md-2">
+                        <img src="../static/images/asa.png" />
+                    </div>
+
+                    <div class="col-md-2"><img src="../static/images/mobile1.jpg" style="height: 60px; padding-top: 10px;" /></div>
+                    <div class="col-md-2"><img src="../static/images/4.png" /></div>
+                    <div class="col-md-2"><img src="../static/images/2.png" /></div>
+                    <div class="col-md-2"><img src="../static/images/3.png" /></div>
+                </div>
+                <div class="row" style="padding-top: 20px;">
+                    <div class="col-md-3">
+                        <h3>MasterGroup<i class="fa fa-star-o" data-rating="1"></i></h3>
+                        <div class="item-box-blog-text">
+                            <p style="color: white; font-size: 18px;">Our company give the greated service for your car.So, we always welcome you.</p>
+                        </div>
+                        <p class="text-center">
+                            <a href="Facebook" style="margin-right: 20px; color: white;"><i class="fa fa-facebook"></i></a>
+                            <a href="Twitter" style="margin-right: 10px; color: white;"><i class="fa fa-twitter"></i></a>
+                            <a href="Instagram" style="margin-left: 10px; color: white;"><i class="fa fa-instagram"></i></a>
+                        </p>
+                    </div>
+                    <div class="col-md-3 ftco-footer-widget">
+                        <header style="font-family: lato; font-size: 26px; color: white;">Services</header>
+                        <hr style="border-width: 2px; border-color: blue;" />
+                        <ul class="list-unstyled">
+                            <li><a href="/" class="py-1 d-block">Home</a></li>
+                            <li><a href="/about" class="py-1 d-block">About</a></li>
+                            <li><a href="/service" class="py-1 d-block">Services</a></li>
+                            <li><a href="/project" class="py-1 d-block">Project</a></li>
+                            <li><a href="/blog" class="py-1 d-block">Blog</a></li>
+                            <li><a href="/contact" class="py-1 d-block">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <header style="font-family: lato; font-size: 26px; color: white;">Hour</header>
+                        <hr style="border-width: 2px; border-color: blue;" />
+                        <h5>Opening Day:</h5>
+                        <i>Monday – Friday : 9am to 20 pm</i>
+                        <i>Saturday : 9am to 17 pm</i>
+                        <h5>Vacations:</h5>
+                        <i>
+                            All Sundays and Official Holidays
+                        </i>
+                    </div>
+                    <div class="col-md-3">
+                        <!-- login -->
+                        <a href="#" data-toggle="tooltip" title="Click button to login!">
+                            <button href="Form.html" class="btn" style="border: 1px solid blue; font-family: sans-serif; color: white; width: 270px; font-size: 20px; margin-top: 20px;">
+                                <a href="/login" style="text-decoration: none;">Login</a>
+                            </button>
+                        </a>
+                        <!-- Register -->
+                      <a href="#" data-toggle="tooltip" title="Click button to Regestion!">
+                            <button href="/register" class="btn" style="border: 1px solid blue; font-family: sans-serif; color: white; width: 270px; font-size: 20px; margin-top: 20px;">
+                                <a href="/register" style="text-decoration: none;">Register</a>
+                            </button>
+                        </a>
+                        {% if session['Uemail'] %}
+                        <button href="/appointmentview" class="btn" style="border: 1px solid blue; font-family: sans-serif; color: white; width: 270px; font-size: 20px; margin-top: 20px;">
+                            <a href="/appointmentview" style="text-decoration: none;">Appointment View</a>
+                            </button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end of footer -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/jquery-migrate-3.0.1.min.js"></script>
+        <script src="../static/js/popper.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+        <script src="../static/js/jquery.easing.1.3.js"></script>
+        <script src="../static/js/jquery.waypoints.min.js"></script>
+        <script src="../static/js/jquery.stellar.min.js"></script>
+
+        <!--   <script src="../js/jquery.animateNumber.min.js"></script>
+  <script src="../js/bootstrap-datepicker.js"></script>
+  <script src="../js/jquery.timepicker.min.js"></script> -->
+        <!-- <script src="../js/owl.carousel.min.js"></script>
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="../js/google-map.js"></script> -->
+        <script src="../static/js/main.js"></script>
+    </body>
+</html>

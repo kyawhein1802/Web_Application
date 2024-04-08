@@ -1,0 +1,159 @@
+{% extends "base.html" %} 
+{% block title%} Home Page {%endblock%} 
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page| Auto Mobile Service</title>
+        <meta charset="utf-8" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
+    </head>
+    <body>
+        <!-- END nav -->
+    <div class="container-fluid" style="background-color: #fafbfc;">
+        <div class="row">
+
+          <video width="100%" controls autoplay loop>
+            <source src="../static/video/index.mp4" type="video/mp4">
+
+          </video>
+            
+        </div>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    {% with messages= get_flashed_messages() %} 
+                    {% if messages %} 
+                    {% for msg in messages %}
+                    <span style="color: red;"> {{msg}} </span>
+                    {% endfor %} 
+                    {% endif %} 
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+        <!-- Start of About -->
+        <div class="container text-center" style="margin-bottom: 20px; margin-top: 20px;">
+            <h2 style="font-weight: bolder; font-family: lato;"><em>Welcome To MasterGroup</em></h2>
+            <p class="text-justify">
+                We have Provide high quality services.We work with clients big and small across a range of sectors and we utilise all forms of media to get your name out there in a way that’s right for you. We have a number of different
+                teams within our agency that specialise in different areas of business so you can be sure that you won’t receive a generic service and although we can’t boast years and years of service we can ensure you that is a good thing
+                in this industry.
+            </p>
+            <!-- End of the service about intro -->
+
+            <h3 style="font-weight: bolder; font-family: lato;"><em>About of MasterGroup</em></h3>
+            <div class="row" style="border: all; border-color: blue; border-width: 2px;">
+                <div class="col-md-6">
+                    <img src="../static/images/BOB18-Winner.png" style="width: 100%; height: 100%;" />
+                </div>
+                <div class="col-md-6">
+                    <p class="text-justify">
+                        Dynamic Automotive's four Frederick locations continue their tradition of over 20+ years of quality auto repair services. Vehicle owners in the Frederick, MD area should know the Dynamic Automotive service mark well.
+                        We strive to go beyond all of our clients, whom we treat more like family. The optimal performance and reliability of your vehicle is what you need from every driving experience. We use clean and consistent
+                        preventative maintenance to ensure you stay ahead of costly repairs and breakdowns. Our team is here to perform the automatic repairs you need, but we'd rather help you avoid them entirely.<span id="dots">...</span>
+                        <span id="more">
+                            The Carmine Import Service team emphasizes three important characteristics of our business: honesty, quality and transparency. These traits have been the driving force of our business, and our goal is to provide
+                            them to every customer who enters our store. You will notice it the moment you enter our facilities as our ASE certified service consultants are ready and waiting to assist you. Our advisors take the time to
+                            understand what happens to your vehicle, your spending limit, and your driving history. With that information, they will create and guide you through a personalized service plan that aims to handle every problem
+                            your vehicle is experiencing. During service, our consultants will also provide you with status updates through your preferred form of communication, so you always know what's going on with your vehicle.
+                        </span>
+                    </p>
+                    <button type="button" class="btn1" onclick="myFunction()" id="btn1">Read more</button>
+                </div>
+            </div>
+        </div>
+        <!-- End of About container -->
+        <div class="container text-center">
+            <h3 style="font-weight: bolder; font-family: lato; padding-bottom: 20px;"><em>Expects Worker</em></h3>
+            <i class="flaticon-repair"></i>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="testimonial-slider" class="owl-carousel">
+                        <div class="service-box">
+                            <div class="service-box-image">
+                                <figure><img alt="" src="../static/images/mechanic.png" style="width: 83%;" /></figure>
+                            </div>
+                            <div class="service-box-body">
+                                <!--Heading-->
+                                <div class="service-box-heading">
+                                    <h5 class="post">Than Than</h5>
+                                </div>
+                                <!--Data-->
+                                <div class="service-box-data">
+                                    <p class="title"><i class="fa fa-user-o"></i>Mechnic Worker</p>
+                                </div>
+                                <!--Text-->
+                                <div class="service-box-text"></div>
+                            </div>
+                        </div>
+                        <!-- 1 -->
+                        <div class="service-box">
+                            <div class="service-box-image">
+                                <figure><img alt="" src="../static/images/staff-1.jpg" style="width: 93%;" /></figure>
+                            </div>
+                            <div class="service-box-body">
+                                <!--Heading-->
+                                <div class="service-box-heading">
+                                    <h5 class="post">Keywaileer</h5>
+                                </div>
+                                <!--Data-->
+                                <div class="service-box-data">
+                                    <p class="title"><i class="fa fa-user-o"></i>project Manager</p>
+                                </div>
+                                <!--Text-->
+                                <div class="service-box-text"></div>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="service-box">
+                            <div class="service-box-image">
+                                <figure><img alt="" src="../static/images/me12.png" style="height: ;" /></figure>
+                            </div>
+                            <div class="service-box-body">
+                                <!--Heading-->
+                                <div class="service-box-heading">
+                                    <h5 class="post">Aung Aung</h5>
+                                </div>
+                                <!--Data-->
+                                <div class="service-box-data">
+                                    <p class="title"><i class="fa fa-user-o"></i>Mechnic Worker</p>
+                                </div>
+                                <!--Text-->
+                                <div class="service-box-text"></div>
+                            </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="service-box">
+                            <div class="service-box-image">
+                                <figure><img alt="" src="../static/images/me13.jpg" style="width: 92%;" /></figure>
+                            </div>
+                            <div class="service-box-body">
+                                <!--Heading-->
+                                <div class="service-box-heading">
+                                    <h5 class="post">La Min</h5>
+                                </div>
+                                <!--Data-->
+                                <div class="service-box-data">
+                                    <p class="title"><i class="fa fa-user-o"></i>Mechnic Worker</p>
+                                </div>
+                                <!--Text-->
+                                <div class="service-box-text"></div>
+                            </div>
+                        </div>
+                        <!-- 4 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ENd of expert worker -->
+        <div class="container-fluid text-center"></div>
+        <!-- Start of footer -->
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+        <script src="../static/js/test.js"></script>
+    </body>
+</html>
+{% endblock %}

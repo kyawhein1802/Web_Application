@@ -1,0 +1,157 @@
+{% extends "base.html" %} {% block title%} Appointment Page {%endblock%} {% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Appointment Page| Auto Mobile Service</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../static/css/test.css" />
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css" rel="stylesheet" id="bootstrap-css"> -->
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery-ui.css')}}" />
+        <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+        <!--   <link rel="stylesheet" href="/resources/demos/style.css"> -->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <body>
+        <!-- END nav -->
+        <div class="container-fluid" style="background-image: url(../static/images/a.jpg); width: 100%; height: 100%; margin-bottom: 20px;">
+            <div class="row text-center">
+                <div class="col-md-12" style="padding-top: 200px; padding-bottom: 200px;">
+                    <h1>Services</h1>
+                    <p style="color: blue; font-size: 17px;">Home/<i>Services</i></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="line-height: 2;">
+            <h1 class="text-center" style="margin-bottom: 40px;">Our Service</h1>
+            <hr style="width: 100%;" />
+
+            <div class="row">
+                <hr style="width: 1000;" />
+                <div class="col-md-4">
+                    <h3>Standard Service</h3>
+                    <p>Oil and filter service</p>
+                    <p>Computer Diagnostics</p>
+                    <p>Transmission Repair services</p>
+                    <p>Heating & Cooling system</p>
+                    <p>Compressor Repair service</p>
+                    <p>Evaporator Repair service</p>
+                    <p>Towing</p>
+                </div>
+                <div class="col-md-4" style="line-height: 2;">
+                    <h3>Tire Service</h3>
+                    <p>Tire change</p>
+                    <p>Tire Balancing</p>
+                    <p>Tire Replacement</p>
+                    <p>Tire Air Pressure Checks</p>
+                    <p>Tire Pressure Monitoring system</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Engine Repair</h3>
+                    <p>Engine Performance Check</p>
+                    <p>Engine Repair</p>
+                    <p>Water Pump Repair</p>
+                    <p>Check engine light repair</p>
+                    <p>Factory Scheduled Maintenance</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center" style="padding-bottom: 20px;">Make An Appointment</h1>
+                    <hr style="width: 100%; border-color: red;" />
+                    <form action="/appointment" class="form-group" method="post" enctype="multipart/form-data">
+                        <label class="label control-label">Vehicle Brand</label>
+                        <input type="text" name="Brand" class="form-control" placeholder="Enter Brand of car:" />
+                        <label class="label control-label">Vehicle Model</label>
+                        <input type="text" name="Model" class="form-control" placeholder="Enter Model of car:" />
+                        <label class="label control-label">Appointment Date:</label>
+                        <div id="dpicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                            <input type="text" name="Date" id="datepicker" class="form-control" />
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="checkform">
+                                    Oil change
+                                    <input type="radio" checked="checked" name="sname" value="Oil Change" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- 1 -->
+                                <label class="checkform">
+                                    Air condition
+                                    <input type="radio" name="sname" value="Air Condition" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- 4 -->
+                                <label class="checkform">
+                                    Car Cleaning
+                                    <input type="radio" name="sname" value="Car Cleaning" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- 7 -->
+                                <label class="checkform">
+                                    Car Wash
+                                    <input type="radio" name="sname" value="Car Wash" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="checkform">
+                                    Engine Repair
+                                    <input type="radio" name="sname" value="Engine Repair" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- 2 -->
+                                <label class="checkform">
+                                    Break System
+                                    <input type="radio" name="sname" value="Break System" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- 5 -->
+                                <label class="checkform">
+                                    Engine Performance Check
+                                    <input type="radio" name="sname" value="Engine Performance Check" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="checkform">
+                                    Car Towing
+                                    <input type="radio" name="sname" value="Car Towing " />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- 3 -->
+                                <label class="checkform">
+                                    Tire Service
+                                    <input type="radio" name="sname" value="Tire Change" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <!-- 6 -->
+                                <label class="checkform">
+                                    Alignment Service
+                                    <input type="radio" name="sname" value="Alignment Service" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <input type="submit" value="Appointment" class="btn btn-info text-center" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start of footer -->
+        <script>
+            $(function () {
+                $("#datepicker").datepicker({ minDate: 0 });
+
+                startDate: new Date();
+            });
+        </script>
+    </body>
+</html>
+{% endblock %}

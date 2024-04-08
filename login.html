@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title%} Login Page {%endblock%}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="../static/css/test.css">
+</head>
+<body>
+<div class="container">
+  <div class="row bg">
+    <div class="col-md-12">
+            <form action='/login' method='post'>
+              
+
+              {% with messages= get_flashed_messages() %}
+
+                {% if messages %}
+                    {% for msg in messages %}
+                    <span style='color:red'>  {{msg}} </span>
+                    {% endfor %}
+
+                {% endif %}
+                
+              {% endwith %}
+              <h2>Welcome Login Account</h2>
+              
+          <label class="label control-label">Email:</label>
+          <input type="Email" name="Uemail"class="form-control" name="Email" placeholder="Enter Email Address:">
+
+          <label class="label control-label">Password</label>
+          <input type="password" name="Upwd" class="form-control" name="Password" placeholder="Password">
+          
+          <input type="submit" value="Login" class="btn btn-info text-center">
+          <a href="/sendforgotcode" >Forgot Passsword ?</a>
+          <a href="/adminlogin" style="float: right;padding-top: 40px;font-size: 20px;">Admin login!</a>
+          </form>
+
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+</body>
+</html>
+{% endblock %}
+

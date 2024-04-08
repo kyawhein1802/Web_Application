@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title%} Register Page {%endblock%}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <link rel="stylesheet" href="../static/css/test.css">
+</head>
+<body>
+<div class="container">
+     <div class="row">
+          <div class="col-md-12 bg">
+               <form action='/register' method='post'>
+
+                    <h2>Welcome Register Form</h2>
+
+                    <label class="label control-label">User name </label>
+                    <input type="text" name="Uname" class="form-control" name="user" placeholder="User name">
+
+                    <label class="label control-label">Email:</label>
+                    <input type="Email" name="Uemail"class="form-control" name="Email" placeholder="Enter Email Address:">
+
+                    <label class="label control-label">Password</label>
+                    <input type="password" name="Upwd" class="form-control" name="Password" placeholder="Password">
+
+               <label class="label control-label">Confirm Password</label>
+                    <input type="password" name="Uconfirmpwd" class="form-control" name="Password" placeholder="Password">
+
+                    <label class="label control-label">Mobile number:</label>
+                    <input type="number" name="Uphone" class="form-control" name="number" placeholder="Enter Mobile">
+                    <input type="submit" value="Register" class="btn btn-info text-center">
+               </form>
+          </div>
+     </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+</body>
+</html>
+{% endblock %}

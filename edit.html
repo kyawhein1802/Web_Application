@@ -1,0 +1,56 @@
+
+<html>
+<head>
+	<title>
+		INSERT
+	</title>
+  <link rel="stylesheet" href="../static/css/test.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+ 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+{% block content %}
+<div class="container">
+	<div class="row">
+			<div class="col-md-12 text-center">
+				<h1 style="font-family: lato;">Welcome Insert Service Page</h1>
+			</div>
+		</div>
+	<div class="row" style="border:2px dashed red;">
+		
+		<div class="col-md-3">
+		<img src="../static/images/auto-service.jpg" style="width: 20%;margin: 10px auto 20px; display: block;">
+		<div class="list-group advnavbar text-center" >
+		    <a href="/admin" class="list-group-item " style="text-decoration: none;">Admin Page</a>
+		    <a href="/insert" class="list-group-item active disable" style="text-decoration: none;">Insert Service</a>
+		    <a href="/update" class="list-group-item" style="text-decoration: none;">Update Service</a>
+		    <a href="/view" class="list-group-item" style="text-decoration: none;">View Service</a>
+        <a href="/contactinfo" class="list-group-item">Contact View</a>
+		    
+		      {% if session['adminEmail'] %}
+                <a href="/adminlogout" class="list-group-item">Logout</a>
+              {% endif %}
+            <li class="nav-item nav-link">{{session['adminEmail']}}</li>
+		  </div>
+		</div>
+		<div class="col-md-1"></div>
+		<div class="col-md-8">
+				<form action='/update' class="form-group" method='post' enctype="multipart/form-data">
+				<input type="hidden" name="sid"class="form-control" value="{{updaterow.sid}}">
+				<label class="label control-label">Service:</label>
+		        <input type="text" name="sname"class="form-control" placeholder="Enter Service Name:" value="{{updaterow.sname}}">
+		        <label class="label control-label">Price:</label>
+		        <input type="number" name="price"class="form-control" placeholder="Enter Price of Service:" value="{{updaterow.price}}">
+		        <label class="label control-label">Image:</label>
+		        <input type="file" name="image"class="form-control" value="update">
+		        <input type="submit" value="update" class="btn btn-info text-center">
+
+				</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+{% endblock %}
+</body>
+</html>

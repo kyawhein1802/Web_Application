@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title%} Appointment Update page {%endblock%} {% block content %}
+<html>
+    <head>
+        <title>
+            INSERT
+        </title>
+        <link rel="stylesheet" href="../static/css/test.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center" style="padding-bottom: 20px;">Update An Appointment</h1>
+                    <hr style="width: 100%; border-color: red;" />
+                    <form action="/updateappointment" class="form-group" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="aid" class="form-control" value="{{updaterow.aid}}" />
+                        <label class="label control-label">Date:</label>
+                        <input type="Date" name="Date" class="form-control" placeholder="Enter Service Name:" value="{{updaterow.Date}}" />
+
+                        <label class="label control-label">Brand:</label>
+                        <input type="text" name="Brand" class="form-control" placeholder="Enter Service Name:" value="{{updaterow.Brand}}" />
+
+                        <label class="label control-label">Model:</label>
+                        <input type="text" name="Model" class="form-control" placeholder="Enter Service Name:" value="{{updaterow.Model}}" />
+
+                        <label class="label control-label">Service:</label>
+                        <input type="text" name="sname" class="form-control" placeholder="Enter Service Name:" value="{{updaterow.sname}}" />
+
+                        <input type="submit" value="update" class="btn btn-info text-center" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/test.js"></script>
+    </body>
+</html>
+{% endblock %}
